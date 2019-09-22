@@ -18,6 +18,8 @@
     "affected:dep-graph": "nx affected:dep-graph",
     "affected": "nx affected",
     "format": "nx format:write",
+    "format:api": "nx format:write api",
+    "format:all": "nx format:write --all",
     "format:write": "nx format:write",
     "format:check": "nx format:check",
     "workspace-schematic": "nx workspace-schematic",
