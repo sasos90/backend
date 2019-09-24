@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 services:
   api:
     build:
@@ -10,3 +10,6 @@ services:
       - "3000:3000"
     volumes:
       - ./apps/api:/app/apps/api
+      - modules:/app/node_modules
+volumes:
+  modules:
