@@ -8,7 +8,7 @@ services:
       port: 3000
     ports:
       - "3000:3000"
-    command: ["node", "/app/dist/apps/api/main.js"]
+    command: ["npm", "run", "start"]
     volumes:
       - ./apps/api:/app/apps/api
       - modules:/app/node_modules
