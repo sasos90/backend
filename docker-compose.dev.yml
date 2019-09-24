@@ -12,5 +12,7 @@ services:
     volumes:
       - ./apps/api:/app/apps/api
       - modules:/app/node_modules
+  db:
+  adminer:
 volumes:
   modules:
