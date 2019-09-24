@@ -5,9 +5,9 @@ services:
       context: .
       dockerfile: ./apps/api/Dockerfile
     environment:
-      port: 3000
+      port: 3001
     ports:
-      - "3000:3000"
+      - "3001:3001"
     command: ["node", "/app/dist/apps/api/main.js"]
     volumes:
       - ./apps/api:/app/apps/api
