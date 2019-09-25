@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker-compose up
+docker-compose -f docker-compose.override.yml -f docker-compose.yml up --build

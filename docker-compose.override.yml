@@ -8,9 +8,8 @@ services:
       port: 3001
     ports:
       - "3001:3001"
-    command: ["node", "/app/dist/apps/api/main.js"]
+    command: ["npm", "run", "start"]
     volumes:
-      - ./apps/api:/app/apps/api
       - modules:/app/node_modules
   db:
     image: postgres:12-alpine
@@ -28,7 +27,6 @@ services:
     restart: "no"
     ports:
       - "8888:8080"
-
 volumes:
   modules:
   db_data:

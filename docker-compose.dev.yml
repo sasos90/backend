@@ -1,8 +1,11 @@
 version: '3.7'
 services:
   api:
+    build:
+      context: .
+      dockerfile: ./apps/api/dev.dockerfile
     command: ["npm", "run", "start"]
+    volumes:
+      - .:/app
   db:
   adminer:
-volumes:
-  modules:
