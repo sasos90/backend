@@ -1,4 +1,4 @@
-FROM node:10.15.1-alpine as run
+FROM node:10.15.1-alpine as build
 
 WORKDIR /app
 COPY package.json package-lock.json ./
@@ -8,3 +8,4 @@ COPY . ./
 RUN npm run build
 
 EXPOSE 3333
+CMD ["node", "/app/dist/apps/api/main.js"]
