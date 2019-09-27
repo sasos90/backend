@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: backend-nestjs
   labels:
-    app: backend-nestjs-app
+    app: backend-nestjs-label-service
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: backend-nestjs-app
+    app.kubernetes.io/name: backend-nestjs-depl-app
+    app.kubernetes.io/instance: {{ .Release.Name }}

@@ -1,18 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-nestjs
+  name: backend-nestjs-deployment
   labels:
-    app: backend-nestjs-app-deployment
+    app: backend-nestjs-label-deployment
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: backend-nestjs-app
+      app.kubernetes.io/name: backend-nestjs-depl-app
+      app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: backend-nestjs-app
+        app.kubernetes.io/name: backend-nestjs-depl-app
+        app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
