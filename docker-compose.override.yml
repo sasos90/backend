@@ -6,6 +6,11 @@ services:
       dockerfile: ./apps/api/Dockerfile
     environment:
       port: 3001
+      db_host: 'db'
+      db_port: 5432
+      db_username: backend
+      db_password: backend123
+      db_name: backend
     ports:
       - "3001:3001"
     command: ["npm", "run", "start"]
