@@ -6,6 +6,8 @@ RUN npm install
 
 WORKDIR /app
 
+RUN apk update && apk add rsync
+
 EXPOSE 3333
 ENTRYPOINT ["/app/entry-point.sh"]
 CMD ["npm", "run", "start"]

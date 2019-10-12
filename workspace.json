@@ -11,10 +11,11 @@
         "build": {
           "builder": "@nrwl/node:build",
           "options": {
-            "outputPath": "dist/apps/api",
+            "outputPath": "dist/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": ["apps/api/src/assets"],
+            "webpackConfig": "webpack.function.js"
           },
           "configurations": {
             "production": {
@@ -33,13 +34,14 @@
         "watch": {
           "builder": "@nrwl/node:build",
           "options": {
-            "outputPath": "dist/apps/api",
+            "outputPath": "dist/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
             "assets": ["apps/api/src/assets"],
             "watch": true,
             "poll": 1000,
-            "maxWorkers": 2
+            "maxWorkers": 2,
+            "webpackConfig": "webpack.function.js"
           },
           "configurations": {
             "production": {

@@ -1,6 +1,6 @@
 version: '3.7'
 services:
   api:
-    command: ["node", "/app/dist/apps/api/main.js"]
+    command: ["node", "/app/dist/api/main.js"]
   db:
-  adminer:
+  pgadmin:

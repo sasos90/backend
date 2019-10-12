@@ -8,4 +8,4 @@ services:
     volumes:
       - .:/app
   db:
-  adminer:
+  pgadmin:

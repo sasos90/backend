@@ -24,7 +24,10 @@
     "format:check": "nx format:check",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "migration:generate": "ts-node node_modules/.bin/typeorm migration:generate",
+    "migration:run": "ts-node node_modules/.bin/typeorm migration:run",
+    "migration:revert": "ts-node node_modules/.bin/typeorm"
   },
   "private": true,
   "dependencies": {
@@ -33,7 +36,7 @@
     "@nestjs/platform-express": "^6.2.4",
     "@nestjs/typeorm": "^6.2.0",
     "pg": "^7.12.1",
-    "reflect-metadata": "^0.1.12",
+    "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.19"
   },
   "devDependencies": {

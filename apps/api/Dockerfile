@@ -8,4 +8,4 @@ COPY . ./
 RUN npm run build
 
 EXPOSE 3333
-CMD ["node", "/app/dist/apps/api/main.js"]
+CMD ["node", "/app/dist/api/main.js"]
