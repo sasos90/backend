@@ -26,6 +26,7 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "migration:generate": "ts-node node_modules/.bin/typeorm migration:generate",
+    "migration:create": "ts-node node_modules/.bin/typeorm migration:create",
     "migration:run": "ts-node node_modules/.bin/typeorm migration:run",
     "migration:revert": "ts-node node_modules/.bin/typeorm"
   },

@@ -16,6 +16,7 @@ import { Connection, getMetadataArgsStorage } from 'typeorm';
       password: process.env.db_password,
       database: process.env.db_name,
       entities: getMetadataArgsStorage().tables.map(tbl => tbl.target),
+      migrations: [__dirname + '/api/**/migrations'],
       synchronize: true,
     }),
     PhotoModule,

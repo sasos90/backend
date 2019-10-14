@@ -33,6 +33,7 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: backend
       PGADMIN_DEFAULT_PASSWORD: backend123
+      PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 50
 volumes:
   modules:
   db_data:

@@ -8,7 +8,7 @@ module.exports = function (webpackConfig, context) {
   // generate additionalEntries
   const additionalEntries = {
     ...getAdditionalEntries("apps/api/**/*.entity{.ts,.js}"),
-    ...getAdditionalEntries("apps/api/**/*.migration{.ts,.js}"),
+    ...getAdditionalEntries("apps/api/**/migrations/*{.ts,.js}"),
     ...getAdditionalEntries("apps/api/**/*.subscriber{.ts,.js}")
   }
 

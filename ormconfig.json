@@ -1,0 +1,11 @@
+{
+  "type": "postgres",
+  "host": "db",
+  "port": 5432,
+  "username": "backend",
+  "password": "backend123",
+  "database": "backend",
+  "entities": ["dist/**/**.entity{.ts,.js}"],
+  "migrations": ["dist/api/**/migrations/*{.ts,.js}"],
+  "synchronize": true
+}
