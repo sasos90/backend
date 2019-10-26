@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: ./apps/api/dev.dockerfile
-    command: ["npm", "run", "start"]
+    command: ["npm", "run", "build", "api", "&&", "npm", "run", "migration:run", "&&", "npm", "run", "start"]
     volumes:
       - .:/app
   db:

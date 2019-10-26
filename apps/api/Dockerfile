@@ -8,4 +8,4 @@ COPY . ./
 RUN npm run build
 
 EXPOSE 3333
-CMD ["node", "/app/dist/api/main.js"]
+CMD ["npm", "run", "build", "api", "&&", "npm", "run", "migration:run", "&&", "node", "/app/dist/api/main.js"]

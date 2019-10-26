@@ -13,4 +13,10 @@ export class Photo {
 
   @Column('int')
   views: number;
+
+  @Column({
+    type: 'int',
+    default: 0
+  })
+  realViews: number;
 }
