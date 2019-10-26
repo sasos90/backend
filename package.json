@@ -30,12 +30,24 @@
     "migration:run": "ts-node node_modules/.bin/typeorm migration:run",
     "migration:revert": "ts-node node_modules/.bin/typeorm"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{apps,libs}/**/*.{ts,json,md,scss,html}": [
+      "npm run format:write -- --uncommitted",
+      "git add"
+    ]
+  },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^6.2.4",
     "@nestjs/core": "^6.2.4",
     "@nestjs/platform-express": "^6.2.4",
     "@nestjs/typeorm": "^6.2.0",
+    "lint-staged": "^9.4.2",
     "pg": "^7.12.1",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.19"
