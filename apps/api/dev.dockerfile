@@ -9,4 +9,5 @@ RUN npm install
 COPY . ./
 
 EXPOSE 3001
+EXPOSE 9229
 CMD ["npm", "run", "start", "api"]

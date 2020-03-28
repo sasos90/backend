@@ -62,7 +62,9 @@
           "builder": "@nrwl/node:execute",
           "options": {
             "buildTarget": "api:watch",
-            "port": 9229
+            "port": 9229,
+            "inspect": true,
+            "host": "0.0.0.0"
           }
         },
         "lint": {
