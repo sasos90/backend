@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  api:
+    container_name: "api_test_service"
+    build:
+      context: .
+      dockerfile: ./apps/api/dev.dockerfile
+    volumes:
+      - ./apps/api/src:/app/apps/api/src
+    environment:
+      API_PORT: 2001
+      API_PREFIX: "api"
+      LOG_LEVEL: 5
+  db:
+    volumes:
+      - type: tmpfs
+        target: /var/lib/postgresql/data
+  pgadmin:
