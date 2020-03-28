@@ -1,13 +1,12 @@
-FROM node:10.15.1-alpine as develop
+FROM node:12.16.1-alpine as develop
 
-WORKDIR /usr/src/cache
+RUN apk update && apk add curl
+
+WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 
-WORKDIR /app
+COPY . ./
 
-RUN apk update && apk add rsync
-
-EXPOSE 3333
-ENTRYPOINT ["/app/entry-point.sh"]
-CMD ["npm", "run", "build", "api", "&&", "npm", "run", "migration:run", "&&", npm", "run", "start"]
+EXPOSE 3001
+CMD ["npm", "run", "start", "api"]

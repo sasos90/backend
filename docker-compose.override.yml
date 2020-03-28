@@ -4,7 +4,10 @@ services:
     build:
       context: .
       dockerfile: ./apps/api/Dockerfile
+    depends_on:
+      - "db"
     environment:
+      # TODO: USE UPPERCASE LETTERS
       port: 3001
       db_host: 'db'
       db_port: 5432
@@ -13,7 +16,7 @@ services:
       db_name: backend
     ports:
       - "3001:3001"
-    command: ["npm", "run", "start"]
+    command: ["npm", "run", "start", "api"]
   db:
     image: postgres:11.5-alpine
     restart: "always"

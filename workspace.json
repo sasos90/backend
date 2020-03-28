@@ -40,7 +40,7 @@
             "assets": ["apps/api/src/assets"],
             "watch": true,
             "poll": 1000,
-            "maxWorkers": 2,
+            "maxWorkers": 4,
             "webpackConfig": "webpack.function.js"
           },
           "configurations": {
