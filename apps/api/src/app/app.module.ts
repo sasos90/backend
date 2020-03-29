@@ -10,19 +10,19 @@ import { Connection, getMetadataArgsStorage } from 'typeorm';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.db_host || 'db',
-      port: Number(process.env.db_port) || 5432,
-      username: process.env.db_username,
-      password: process.env.db_password,
-      database: process.env.db_name,
+      host: process.env.DB_HOST || 'db',
+      port: Number(process.env.DB_PORT) || 5432,
+      username: process.env.DB_USERNAME,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME,
       entities: getMetadataArgsStorage().tables.map(tbl => tbl.target),
       migrations: [__dirname + '/api/**/migrations'],
-      synchronize: true,
+      synchronize: true
     }),
-    PhotoModule,
+    PhotoModule
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService]
 })
 export class AppModule {
   constructor(private readonly connection: Connection) {}
