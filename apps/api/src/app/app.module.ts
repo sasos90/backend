@@ -3,8 +3,8 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PhotoModule } from './photo/photo.module';
 import { Connection, getMetadataArgsStorage } from 'typeorm';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -16,10 +16,10 @@ import { Connection, getMetadataArgsStorage } from 'typeorm';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
       entities: getMetadataArgsStorage().tables.map(tbl => tbl.target),
-      migrations: [__dirname + '/api/**/migrations'],
-      synchronize: true
+      migrations: [__dirname + '/**/migrations'],
+      synchronize: false
     }),
-    PhotoModule
+    UserModule
   ],
   controllers: [AppController],
   providers: [AppService]

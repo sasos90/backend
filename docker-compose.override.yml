@@ -15,7 +15,7 @@ services:
       DB_NAME: backend
     ports:
       - "3001:3001"
-    command: ["npm", "run", "start", "api"]
+    command: ["npm", "run", "start:api:with-migrations"]
   db:
     image: postgres:11.5-alpine
     restart: "always"
@@ -28,7 +28,7 @@ services:
       POSTGRES_PASSWORD: backend123
       POSTGRES_DB: backend
   pgadmin:
-    image: dpage/pgadmin4:4.13
+    image: dpage/pgadmin4:4.14
     restart: "always"
     ports:
       - "8888:80"
