@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: api-db-migrate
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-delete-policy": hook-succeeded
+    "helm.sh/hook-weight": "2"
+spec:
+  activeDeadlineSeconds: 60
+  template:
+    metadata:
+      name: db-migrate
+    spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+      {{- toYaml . | nindent 8 }}
+    {{- end }}
+      restartPolicy: Never
+      containers:
+        - name: db-migrate
+          image: {{ .Values.api.image.repository }}:{{ .Values.api.image.tag }}
+          envFrom:
+            - secretRef:
+                name: api-db-credentials
+          command: ["npm", "run", "api:migration:run"]
