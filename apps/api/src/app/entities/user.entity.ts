@@ -13,4 +13,10 @@ export class UserEntity extends BaseEntity {
 
   @Column({ length: 500 })
   email: string;
+
+  @Column({ default: true })
+  isActive: boolean;
+
+  // @OneToMany(type => Photo, photo => photo.user)
+  // photos: Photo[];
 }

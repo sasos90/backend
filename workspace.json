@@ -15,8 +15,7 @@
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
             "assets": ["apps/api/src/assets"],
-            "maxWorkers": 6,
-            "webpackConfig": "webpack.function.js"
+            "maxWorkers": 6
           },
           "configurations": {
             "production": {
@@ -41,8 +40,7 @@
             "assets": ["apps/api/src/assets"],
             "watch": true,
             "poll": 1000,
-            "maxWorkers": 6,
-            "webpackConfig": "webpack.function.js"
+            "maxWorkers": 6
           },
           "configurations": {
             "production": {
